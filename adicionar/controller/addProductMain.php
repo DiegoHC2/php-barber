@@ -20,4 +20,6 @@ try {
     echo "Retornar algum erro no front avisando !";
 }
 
+$connect->close();
+
 
