@@ -7,5 +7,7 @@ Forám utilizados no projeto
 
 * PHP 8.0
 * MySql
+* Bootstrap 4.0.0
+* jquery 3.5.1
 
 Além disso, o projeto está orientado a objetos e ainda em construção. ;D
