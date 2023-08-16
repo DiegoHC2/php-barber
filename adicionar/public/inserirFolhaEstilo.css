@@ -1,0 +1,16 @@
+.active2 {
+    color:black;
+}
+
+.navLink{
+    padding: 20px;
+    margin-bottom: 5px;
+}
+
+.linkHover:hover {
+    border-bottom: 1px solid red;
+}
+
+.noSelected {
+    color: grey;
+}
