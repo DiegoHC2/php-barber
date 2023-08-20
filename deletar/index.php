@@ -8,6 +8,7 @@ $id = $_GET['id'];
 $consulta = (new Connection())->dbConnect();
 
 (new DeletarProduto($consulta))->deletarPorId($id);
+$consulta->close();
 
 
 
