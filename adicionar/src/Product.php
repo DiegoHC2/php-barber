@@ -10,12 +10,10 @@ class Product
 
     protected int $quantidade;
     protected float $valor;
-    protected string $dataDeCompra;
-    public function __construct(string $nome, int $quantidade, float $valor, string $dataDeCompra)
+    public function __construct(string $nome, int $quantidade, float $valor)
     {
         $this->nome = $nome;
         $this->valor = $valor;
-        $this->dataDeCompra = $dataDeCompra;
         $this->quantidade = $quantidade;
     }
     public function getNome(): string

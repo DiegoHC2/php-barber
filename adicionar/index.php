@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="adicionar/public/inserirFolhaEstilo.css">
     <script src="../jquery/code.jquery.com_jquery-3.5.1.min.js"></script>
     <script src="../bootstrap-4.0.0/js/bootstrap.min.js"></script>
+    <script src="../maskMoney/src/jquery.maskMoney.js" type="text/javascript"></script>
     <title>Adicionar produto</title>
 </head>
 <body class="text-center bg-primary">
@@ -26,20 +27,39 @@
 
     <main role="main" class="inner cover">
         <h1 class="cover-heading">Adicionar Produto</h1>
-        <input>
-        <input>
-        <input>
+        <div class="d-flex justify-content-center flex-column">
+            <form method="POST" action="controller/addProductMain.php" >
+                <div class="m-4">
+                    <input type="text" id="nomeProduto" name="nomeProduto" placeholder="Nome do produto">
+                </div>
+                <div class="m-4">
+                    <input type="number" id="quantidade" name="quantidade" placeholder="quantidade">
+                </div>
+                <div class="m-4">
+                    <input id="inputValor" type="text" placeholder="valor">
+                    <input type="hidden" type="number" id="valor" name="valor">
+                </div>
+                <div class="d-flex justify-content-center m-2">
+                    <button class="btn btn-success">Cadastrar</button>
+                </div>
+            </form>
+        </div>
     </main>
 
     <footer class="mastfoot mt-auto">
         <div class="inner">
-            <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+            Todos direitos reservados a <a href="https://www.instagram.com/rg_barbeariia/">@RG_Barbearia</a>
         </div>
     </footer>
 </div>
 
 </body>
 <script>
-
+    $(document).ready(function(){
+        $("#inputValor").maskMoney({prefix:'R$ ', allowNegative: true, thousands:'.', decimal:',', affixesStay: false});
+        $("#inputValor").on('keyup',function () {
+            $("#valor").val($('#inputValor').maskMoney('unmasked')[0]);
+        });
+    });
 </script>
 </html>

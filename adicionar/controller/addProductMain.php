@@ -6,7 +6,8 @@ use Barber\adicionar\model\ProductModel;
 use Barber\adicionar\src\Product;
 use Barber\adicionar\src\validation\NewProductValidation;
 
-$product = new Product("Espuma de barbear",1,10.5,"2023-05-02");
+
+$product = new Product($_POST['nomeProduto'],$_POST['quantidade'],$_POST['valor']);
 $connect = (new Connection())->dbConnect();
 
 
@@ -16,9 +17,13 @@ $validation = new NewProductValidation($product);
 try {
     $validation->verify();
     $productModel->add();
+    header("Location: http://localhost:8080/adicionar?success=adicionar");
 } catch (Exception $e){
     echo "Retornar algum erro no front avisando !";
+    header("Location: http://localhost:8080/adicionar?error=adicionar");
+
 }
+
 
 $connect->close();
 
