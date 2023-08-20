@@ -9,5 +9,6 @@ Forám utilizados no projeto
 * MySql
 * Bootstrap 4.0.0
 * jquery 3.5.1
+* Font-awesome 6
 
 Além disso, o projeto está orientado a objetos e ainda em construção. ;D

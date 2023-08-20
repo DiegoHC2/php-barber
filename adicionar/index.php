@@ -28,7 +28,7 @@
     <main role="main" class="inner cover">
         <h1 class="cover-heading">Adicionar Produto</h1>
         <div class="d-flex justify-content-center flex-column">
-            <form method="POST" action="controller/addProductMain.php" >
+            <form method="POST" action="../adicionar/controller/addProductMain.php" >
                 <div class="m-4">
                     <input type="text" id="nomeProduto" name="nomeProduto" placeholder="Nome do produto">
                 </div>
