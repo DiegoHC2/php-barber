@@ -1,17 +1,16 @@
 <?php
-namespace Barber\adicionar\model;
-use Barber\adicionar\src\Product;
-use Exception;
-use mysqli;
 
-class ProductModel
+namespace src;
+
+
+class addProduct
 {
     private Product $product;
-    private mysqli $mysqli;
+    private \mysqli $mysqli;
 
     private string $query1;
 
-    public function __CONSTRUCT(Product $product, mysqli $mysqli)
+    public function __CONSTRUCT(Product $product, \mysqli $mysqli)
     {
         $this->product = $product;
         $this->mysqli = $mysqli;
@@ -27,9 +26,7 @@ class ProductModel
                 addslashes($this->product->getValor()).")"
             );
         } catch (Exception $e){
-             echo "Inserir log error";
+            echo "Inserir log error";
         }
     }
-
-
 }
