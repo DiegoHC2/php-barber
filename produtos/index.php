@@ -45,7 +45,7 @@ $consulta->close();
         <td><?php echo $item['dataCompra']; ?></td>
         <td>
             <div class="d-flex">
-                <a href="#" style="color:darkblue;"><i class="fa-solid fa-pen-to-square"></i></a>
+                <a href="../editar/index.php?id=<?php echo $item['id']; ?>" style="color:darkblue;"><i class="fa-solid fa-pen-to-square"></i></a>
                 <a href="../deletar/index.php?id=<?php echo $item['id']; ?>" class="ml-4" style="color:red;"><i class="fa-solid fa-trash-can"></i></a>
             </div>
         </td>

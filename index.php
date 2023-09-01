@@ -35,15 +35,15 @@
                 </a>
             </div>
             <div class="option" >
-                <a href="#" style="text-decoration: none" class="d-flex row">
+                <a href="/produtos/index.php" style="text-decoration: none" class="d-flex row">
                     <div>
                         <i class="fa-regular fa-boxes-stacked"></i>
                     </div>
                    <span>Estoque </span>
                 </a>
             </div>
-            <div class="option" >
-                <a href="#" style="text-decoration: none" class="d-flex row">
+            <div class="option"  >
+                <a class="d-flex row" disabled>
                     <i class="fa-regular fa-pump-soap"></i>
                     <span>Produtos</span>
                 </a>

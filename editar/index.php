@@ -1,7 +1,7 @@
 <?php
 
 use Barber\adicionar\config\Connection;
-use src\Product;
+use Barber\editar\src\Product;
 
 require_once "../autoload.php";
 
@@ -30,19 +30,21 @@ $consulta->close();
 </head>
 <body class="d-flex ">
 <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-    <form>
+    <form method="post" action="../editar/backend/update.php">
+        <input type="hidden" name ="id" value="<?php  echo $id;?>">
         <div class="d-flex flex-column">
             <spa>Nome do produto</spa>
-            <input type="text" value="<?php echo $produto['nomeProduto'];?>">
+            <input type="text" name="nome" value="<?php echo $produto['nomeProduto'];?>">
         </div>
         <div class="d-flex flex-column mb-3 mt-3">
             <spa>Quantidade</spa>
-            <input type="number" value="<?php echo $produto['quantidade'];?>">
+            <input type="number" name="qtd" value="<?php echo $produto['quantidade'];?>">
         </div>
         <div class="d-flex flex-column">
             <spa>Valor</spa>
-            <input type="text" value="<?php echo $produto['valor'];?>">
+            <input type="text" name="valor" value="<?php echo $produto['valor'];?>">
         </div>
+        <button type="submit" class="bg bg-primary">Editar</button>
     </form>
 </div>
 </body>

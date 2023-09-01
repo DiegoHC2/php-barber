@@ -9,13 +9,14 @@ use Barber\editar\src\Product as ProductInsert;
 
 $consulta = (new Connection())->dbConnect();
 
-$nome = "teste";
-$quantidade = 2;
-$valor = 20.2;
-$produto = (new ProductInsert($consulta))->editarProduto(new Product($nome,$quantidade,$valor),5);
+$nome = $_POST['nome'];
+$quantidade = $_POST['qtd'];
+$valor = $_POST['valor'];
+$id = $_POST['id'];
+$produto = (new ProductInsert($consulta))->editarProduto(new Product($nome,$quantidade,$valor),$id);
 
 if($produto){
-    echo "Deu bom";
+    header("Location: http://localhost:8080/produtos?sucess=ok");
 } else {
-    echo "Sei lá";
+    header("Location: http://localhost:8080/produtos?error=ok");
 }
