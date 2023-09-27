@@ -1,0 +1,12 @@
+1 etapa Usuario irá registrar o trabalho
+
+2 o trabalho irá ter hora valor e tipo de servico registrado
+ * o serico registrado poderá ter mais de 1 servico
+ * a hora irá ser registrada em minutos para facilitar cálculos
+
+3 O usuário poderá registrar os produtos que ele quer colocar nos servicos
+
+4 Existe 3 rotas para solução
+ 1 o usuario realiza somente venda do produto
+ 2 o usuario realiza somente venda do servico
+ 3 o usuario realiza venda do servico e produto
