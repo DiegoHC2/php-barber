@@ -11,4 +11,4 @@ Forám utilizados no projeto
 * jquery 3.5.1
 * Font-awesome 6
 
-Além disso, o projeto está orientado a objetos e ainda em construção. ;D
+V2.0.0
