@@ -11,4 +11,4 @@ Forám utilizados no projeto
 * jquery 3.5.1
 * Font-awesome 6
 
- Alfa V2.0.0
+ Alfa V1.0.1
