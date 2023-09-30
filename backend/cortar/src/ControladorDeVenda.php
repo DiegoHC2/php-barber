@@ -1,6 +1,6 @@
 <?php
 
-namespace src;
+namespace backend\cortar\src;
 
 
 class ControladorDeVenda
@@ -35,8 +35,6 @@ class ControladorDeVenda
             return true;
         }
 
-        /*
-         * Então é uma venda de Produto + servico */
     }
 
 

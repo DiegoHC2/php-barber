@@ -29,4 +29,6 @@ class RegistrarVendaDeProduto implements Venda
                          '".addslashes($this->valor)."', NOW()) ";
                 $this->consulta->query($qr);
     }
+
+
 }

@@ -8,11 +8,12 @@ $minutos = 123;
 $servicos = [
     "corte",
 ];
+$minutos = null;
+$servicos = null;
 $produtos = [
     "Tinta",
     "Gel"
 ];
-$produtos = null;
 $valor = 45.20;
 $consulta = (new Connection())->dbConnect();
 $controlador = new ControladorDeVenda($minutos, $produtos, $servicos, $valor, $consulta);

@@ -32,6 +32,7 @@ VALUES (
         '".addslashes($servico)."',
         {$this->valor},
          {$this->minutos}, NOW())";
+
         $this->consulta->query($qr);
     }
 
