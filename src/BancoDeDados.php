@@ -14,7 +14,7 @@ class BancoDeDados
     {
         $this->consulta = $consulta;
     }
-    public function pegarTodosProdutos() : array
+    public function pegarTodosProdutos() : ?array
     {
         $qr = "SELECT * FROM `produtos`";
         $retorno = $this->consulta->query($qr);
@@ -28,7 +28,7 @@ class BancoDeDados
             $this->control++;
         }
 
-        return $this->array;
+        return ($this->array ?? null);
 
 
     }

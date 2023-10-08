@@ -1,4 +1,8 @@
 <?php
+$success = false;
+if(isset($_GET['success'])){
+    $success = true;
+}
 ?>
 
 <!DOCTYPE html>
@@ -7,47 +11,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../bootstrap-4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="adicionar/public/inserirFolhaEstilo.css">
+    <link rel="stylesheet" href="public/inserirFolhaEstilo.css">
     <script src="../jquery/code.jquery.com_jquery-3.5.1.min.js"></script>
     <script src="../bootstrap-4.0.0/js/bootstrap.min.js"></script>
     <script src="../maskMoney/src/jquery.maskMoney.js" type="text/javascript"></script>
     <title>Adicionar produto</title>
 </head>
-<body class="text-center bg-primary">
+<body style="background-color: #2f2f2f;">
+<?php if($success) { ?>
+<div class="alert alert-success" style="position: fixed;right: 0px;">
+    Produto adicionado com sucesso !
+</div>
+<?php } ?>
 <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-    <header class="masthead mb-auto d-flex justify-content-center">
-        <div class="inner bg-white justify-content-center" style="width: 700px;border-radius: 15px;">
-            <h3 class="masthead-brand">RG</h3>
-            <nav class="nav nav-masthead justify-content-center">
-                <a class="nav-link linkHover navLink noSelected" style="text-decoration: none;" href="#">Home</a>
-                <a class="nav-link linkHover active2 navLink" style="text-decoration: none;" href="#">Adicionar</a>
-            </nav>
-        </div>
-    </header>
-
-    <main role="main" class="inner cover">
-        <h1 class="cover-heading">Adicionar Produto</h1>
+    <h1 class="cover-heading" style="margin-top:5%;color: #ff6b47;">Adicionar Produto</h1>
+    <div class="text-center">
         <div class="d-flex justify-content-center flex-column">
-            <form method="POST" action="../adicionar/controller/addProductMain.php" >
-                <div class="m-4">
-                    <input type="text" id="nomeProduto" name="nomeProduto" placeholder="Nome do produto">
-                </div>
-                <div class="m-4">
-                    <input type="number" id="quantidade" name="quantidade" placeholder="quantidade">
-                </div>
-                <div class="m-4">
-                    <input id="inputValor" type="text" placeholder="valor">
-                    <input type="hidden" type="number" id="valor" name="valor">
-                </div>
-                <div class="d-flex justify-content-center m-2">
-                    <button class="btn btn-success">Cadastrar</button>
-                </div>
-            </form>
+            <div class=" ml-auto mr-auto" style="background-color: #363839;width: 70%;padding: 50px;border-radius:129px;">
+                <form method="POST" action="../adicionar/controller/addProductMain.php" >
+                    <span style="color:white;font-size:21px;">Nome do produto</span>
+                    <div class="m-4 d-flex justify-content-center">
+                        <input style="width: 65%;" class="text-center form-control" type="text" id="nomeProduto" name="nomeProduto">
+                    </div>
+                    <span style="color:white;font-size:21px;">Quantidade</span>
+                    <div class="m-4 d-flex justify-content-center">
+                        <input style="width: 65%;" class="text-center form-control" type="number" id="quantidade" name="quantidade" >
+                    </div>
+                    <span style="color:white;font-size:21px;">Valor</span>
+                    <div class="m-4 d-flex justify-content-center">
+                        <input style="width: 65%;" class="text-center form-control" id="inputValor" type="text" >
+                        <input  type="hidden" type="number" id="valor" name="valor">
+                    </div>
+                    <div class=" m-2">
+                        <button class="btn " style="font-size: 15px;font-weight: bold;">Cadastrar</button>
+                    </div>
+                </form>
+            </div>
         </div>
-    </main>
-
-    <footer class="mastfoot mt-auto">
-        <div class="inner">
+    </div>
+    <footer class="mastfoot mt-auto text-center">
+        <div class="inner" style="color:darkgrey;">
             Todos direitos reservados a <a href="https://www.instagram.com/rg_barbeariia/">@RG_Barbearia</a>
         </div>
     </footer>

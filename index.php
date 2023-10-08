@@ -29,23 +29,18 @@
         <img src="public/images/background.jpg" alt="Imagem">
         <div id="menu" class="d-flex flex-column justify-content-center align-content-center">
             <div class="option" >
-                <a class="d-flex row" disabled>
-                    <i class="fa-solid fa-scissors"></i>
+                <a class="d-flex row" >
                     <span>Cortar</span>
                 </a>
             </div>
             <div class="option" >
                 <a href="/produtos/index.php" style="text-decoration: none" class="d-flex row">
-                    <div>
-                        <i class="fa-regular fa-boxes-stacked"></i>
-                    </div>
                    <span>Estoque </span>
                 </a>
             </div>
-            <div class="option"  >
-                <a class="d-flex row" disabled>
-                    <i class="fa-regular fa-pump-soap"></i>
-                    <span>Produtos</span>
+            <div class="option text-center"  >
+                <a  href="/adicionar/index.php" style="text-decoration: none" class="d-flex row">
+                    <span>Adicionar Produto</span>
                 </a>
             </div>
         </div>

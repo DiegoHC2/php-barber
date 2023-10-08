@@ -7,6 +7,7 @@ $consulta = (new Connection())->dbConnect();
 $arrayProdutos = (new BancoDeDados($consulta))->pegarTodosProdutos();
 
 $consulta->close();
+
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +37,9 @@ $consulta->close();
     </tr>
     </thead>
     <tbody>
-    <?php foreach($arrayProdutos as $item){ ?>
+    <?php
+    if($arrayProdutos != null){
+    foreach($arrayProdutos as $item){ ?>
     <tr>
         <th scope="row"><?php echo $item['id']; ?></th>
         <td><?php echo $item['nomeProduto']; ?></td>
@@ -50,7 +53,15 @@ $consulta->close();
             </div>
         </td>
     </tr>
-<?php } ?>
+<?php }
+    } else {
+    ?>
+    <tr>
+        <td colspan="6">
+            <strong>Nenhum produto cadastrado !</strong>
+        </td>
+    </tr>
+    <?php  } ?>
     </tbody>
 </table>
 </body>

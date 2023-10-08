@@ -3,6 +3,9 @@
 namespace backend\cortar\src;
 
 
+use src\RegistrarVendaDeProduto;
+use src\RegistrarVendaDeServico;
+
 class ControladorDeVenda
 {
     private ?int $minutos;

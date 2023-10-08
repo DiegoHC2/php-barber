@@ -1,8 +1,8 @@
 <?php
 require_once   (__DIR__."/../../autoload.php");
 
+use backend\cortar\src\ControladorDeVenda;
 use Barber\adicionar\config\Connection;
-use src\ControladorDeVenda;
 
 $minutos = 123;
 $servicos = [
