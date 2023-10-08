@@ -1,0 +1,30 @@
+ #buttonCorte{
+     background-color: #1a2d3f;
+     font-size:60px;
+     letter-spacing: 1px;
+     text-shadow: -1px 1px black;
+     border-radius: 15px;
+     text-transform: uppercase;
+     border:3px solid lightsteelblue;
+     color:white;
+     width: 301px;
+ }
+ #body_menu{
+      width: 100%;
+      display:flex;
+      background-color: #b3b3b3;
+      color: black;
+     border: 3px solid #cfcfcf;
+ }
+ body{
+      background-color: whitesmoke;
+      height: 800px;
+ }
+ .bg_letter_primary{
+     color: #f36133;
+     letter-spacing: 2px;
+     text-shadow: 1px 1px #555555;
+     font-size: 40px;
+     font-weight: bold;
+     text-transform: uppercase;
+ }
