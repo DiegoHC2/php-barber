@@ -1,4 +1,12 @@
+<?php
+require_once ("../../autoload.php");
+use Barber\adicionar\config\Connection;
+use src\Produtos;
 
+$consulta = (new Connection())->dbConnect();
+$arrayProdutos = (new Produtos($consulta))->pegarProdutosDoBancoDeDados();
+$consulta->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,8 +38,19 @@
             </div>
             <div class="d-flex flex-column" style="width: 50%;">
                 <span class="bg_letter_primary">Produtos</span>
-                <span>Option1</span>
-                <span>Option2</span>
+                <?php
+                if($arrayProdutos != null){
+                foreach($arrayProdutos as $produto) {?>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            <?php echo $produto['nome'];?>
+                        </label>
+                    </div>
+                <?php }
+                } else {?>
+                    <span>Sem Produtos cadastrados !</span>
+                <?php }?>
             </div>
         </div>
     </div>

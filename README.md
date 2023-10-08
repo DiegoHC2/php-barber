@@ -11,4 +11,8 @@ Forám utilizados no projeto
 * jquery 3.5.1
 * Font-awesome 6
 
- Alfa V1.0.2
+# V1.0.3
+
+## Version v1.0.3
+
+#### Adicionado na aba corte, produtos cadastrados no BD
