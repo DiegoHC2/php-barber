@@ -29,7 +29,7 @@
         <img src="public/images/background.jpg" alt="Imagem">
         <div id="menu" class="d-flex flex-column justify-content-center align-content-center">
             <div class="option" >
-                <a class="d-flex row" >
+                <a href="site/cortar/main.php" style="text-decoration: none;" class="d-flex row" >
                     <span>Cortar</span>
                 </a>
             </div>
@@ -41,6 +41,11 @@
             <div class="option text-center"  >
                 <a  href="/adicionar/index.php" style="text-decoration: none" class="d-flex row">
                     <span>Adicionar Produto</span>
+                </a>
+            </div>
+            <div class="option text-center"  >
+                <a  href="/adicionar/servico/main.php" style="text-decoration: none" class="d-flex row">
+                    <span>Adicionar Serviço</span>
                 </a>
             </div>
         </div>
@@ -76,7 +81,7 @@
         top:40%;
         right: 17%;
         padding: 20px;
-        width: 250px;
+        width: 480px;
         border-radius: 15px;
         background-color: rgb(0 0 0 / 18%);
     }

@@ -1,7 +1,8 @@
 <?php
 require_once "../autoload.php";
+
 use Barber\adicionar\config\Connection;
-use Barber\src\BancoDeDados;
+use Barber\src\service\BancoDeDados;
 
 $consulta = (new Connection())->dbConnect();
 $arrayProdutos = (new BancoDeDados($consulta))->pegarTodosProdutos();

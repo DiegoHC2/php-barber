@@ -11,8 +11,12 @@ Forám utilizados no projeto
 * jquery 3.5.1
 * Font-awesome 6
 
-# V1.0.3
+# V2.0.0
 
 ## Version v1.0.3
 
 #### Adicionado na aba corte, produtos cadastrados no BD
+## Version v2.0.0
+
+#### Adicionar servicos
+#### Inserido validações backend e nova página
