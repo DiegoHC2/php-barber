@@ -2,9 +2,11 @@
 require_once ("../../autoload.php");
 use Barber\adicionar\config\Connection;
 use src\Produtos;
+use src\Servicos;
 
 $consulta = (new Connection())->dbConnect();
 $arrayProdutos = (new Produtos($consulta))->pegarProdutosDoBancoDeDados();
+$arrayServicos = (new Servicos($consulta))->pegarServicosBancoDeDados();
 $consulta->close();
 ?>
 <!DOCTYPE html>
@@ -33,8 +35,18 @@ $consulta->close();
         <div class="d-flex align-content-end" style="width: 100%;">
             <div class="d-flex flex-column" style="width: 40%;">
                 <span class="bg_letter_primary">Serviços</span>
-                <span>Option1</span>
-                <span>Option2</span>
+                <?php if($arrayServicos !=null ){
+                    foreach ($arrayServicos as $servico){
+                ?>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                <?php echo $servico['nome'];?>
+                            </label>
+                        </div>
+                <?php }} else { ?>
+                    <span>Sem Servicos cadastrados !</span>
+                <?php } ?>
             </div>
             <div class="d-flex flex-column" style="width: 50%;">
                 <span class="bg_letter_primary">Produtos</span>

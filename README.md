@@ -11,7 +11,7 @@ Forám utilizados no projeto
 * jquery 3.5.1
 * Font-awesome 6
 
-# V2.0.0
+# V2.0.1
 
 ## Version v1.0.3
 
@@ -20,3 +20,6 @@ Forám utilizados no projeto
 
 #### Adicionar servicos
 #### Inserido validações backend e nova página
+
+## Version v2.0.1 
+#### Adicionado na aba corte servicos registrado no banco de dados
