@@ -34,41 +34,55 @@ $consulta->close();
     <div id="body_menu" >
         <div class="d-flex align-content-end" style="width: 100%;">
             <div class="d-flex flex-column" style="width: 40%;">
-                <span class="bg_letter_primary">Serviços</span>
-                <?php if($arrayServicos !=null ){
-                    foreach ($arrayServicos as $servico){
-                ?>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                <?php echo $servico['nome'];?>
-                            </label>
-                        </div>
-                <?php }} else { ?>
-                    <span>Sem Servicos cadastrados !</span>
-                <?php } ?>
+                <form id="form" action="../../backend/cortar/registrarCorte.php" method="POST">
+                    <span class="bg_letter_primary">Serviços</span>
+                    <?php if($arrayServicos !=null ){
+                        $controlador = 0;
+                        foreach ($arrayServicos as $key=>$servico){
+                            $controlador = $key;
+                            ?>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="<?php echo "servico{$key}";?>" value="<?php echo $servico['id'];?>" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    <?php echo $servico['nome'];?>
+                                </label>
+                            </div>
+                        <?php } ?>
+                        <input type="hidden" name="quantidade_servico" value="<?php echo $controlador;?>">
+                            <?php
+                    } else { ?>
+                        <span>Sem Servicos cadastrados !</span>
+                    <?php } ?>
             </div>
             <div class="d-flex flex-column" style="width: 50%;">
                 <span class="bg_letter_primary">Produtos</span>
                 <?php
                 if($arrayProdutos != null){
-                foreach($arrayProdutos as $produto) {?>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            <?php echo $produto['nome'];?>
-                        </label>
-                    </div>
-                <?php }
-                } else {?>
+                    $controlador = 0;
+                    foreach($arrayProdutos as $key=>$produto) {
+                        $controlador = $key;
+                        ?>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="<?php echo "produto{$key}";?>" value="<?php echo $produto['id'];?>" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                <?php echo $produto['nome'];?>
+                            </label>
+                        </div>
+                    <?php } ?>
+                    <input type="hidden" name="quantidade_produtos" value="<?php echo $controlador;?>">
+                        <?php } else {?>
                     <span>Sem Produtos cadastrados !</span>
                 <?php }?>
+                </form>
             </div>
         </div>
     </div>
 </div>
 </body>
 <script>
-
+    $("#buttonCorte").on('click', function(){
+        $("form").submit();
+    });
 </script>
 </html>

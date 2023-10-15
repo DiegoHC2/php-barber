@@ -1,10 +1,7 @@
 <?php
 
-namespace backend\cortar\src;
+namespace src\dataBase;
 
-
-use src\RegistrarVendaDeProduto;
-use src\RegistrarVendaDeServico;
 
 class ControladorDeVenda
 {

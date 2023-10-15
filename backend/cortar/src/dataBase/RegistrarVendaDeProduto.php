@@ -1,6 +1,8 @@
 <?php
 
-namespace src;
+namespace src\dataBase;
+
+use src\Venda;
 
 class RegistrarVendaDeProduto implements Venda
 {

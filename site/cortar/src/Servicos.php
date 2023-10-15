@@ -22,6 +22,7 @@ class Servicos
             {
                 $resultado[$controlador]['nome'] = $row['nome'];
                 $resultado[$controlador]['valor'] = $row['valor'];
+                $resultado[$controlador]['id'] = $row['id'];
                 $controlador++;
             }
             return $resultado;

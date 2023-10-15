@@ -1,10 +1,16 @@
 <?php
 require_once   (__DIR__."/../../autoload.php");
 
-use backend\cortar\src\ControladorDeVenda;
 use Barber\adicionar\config\Connection;
+use src\dataBase\ControladorDeVenda;
 
-$minutos = 123;
+$consulta = (new Connection())->dbConnect();
+$filtro = new \src\Filtro($_POST);
+$banco = new \src\dataBase\BancoDeDados($consulta);
+$arrayProdutos = $banco->pegarProdutosPorId($filtro->tratarProdutos());
+$arrayServicos = $banco->pegarServicosPorId($filtro->tratarServicos());
+var_dump($arrayServicos);
+/*$minutos = 123;
 $servicos = [
     "corte",
 ];
@@ -13,11 +19,10 @@ $servicos = null;
 $produtos = [
     "Tinta",
     "Gel"
-];
+];*/
 $valor = 45.20;
-$consulta = (new Connection())->dbConnect();
-$controlador = new ControladorDeVenda($minutos, $produtos, $servicos, $valor, $consulta);
+$controlador = new ControladorDeVenda(1, null, $arrayServicos, $valor, $consulta);
 
 $controlador->registrarServico();
-
 $consulta->close();
+exit();

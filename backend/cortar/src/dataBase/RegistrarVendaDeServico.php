@@ -1,8 +1,8 @@
 <?php
 
-namespace src;
+namespace src\dataBase;
 
-use function Sodium\add;
+use src\Venda;
 
 class RegistrarVendaDeServico implements Venda
 {
@@ -29,7 +29,7 @@ class RegistrarVendaDeServico implements Venda
     {
         $qr = "INSERT INTO `log_venda_servico` (`servico`, `valor`, `minutos`, `data`)
 VALUES (
-        '".addslashes($servico)."',
+        '".addslashes($servico['nome'])."',
         {$this->valor},
          {$this->minutos}, NOW())";
 
