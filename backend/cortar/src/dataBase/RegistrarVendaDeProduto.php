@@ -10,10 +10,9 @@ class RegistrarVendaDeProduto implements Venda
     private float $valor;
     private \mysqli $consulta;
 
-    public function __construct(array $produtos, float $valor, \mysqli $consulta)
+    public function __construct(array $produtos, \mysqli $consulta)
     {
         $this->produtos = $produtos;
-        $this->valor = $valor;
         $this->consulta = $consulta;
     }
     public function registrarVenda()
@@ -27,8 +26,8 @@ class RegistrarVendaDeProduto implements Venda
     {
                 $qr = "INSERT INTO `log_venda_produto` (`produto`, `valor`, `data`)
                 VALUES (
-                        '".addslashes($produto)."',
-                         '".addslashes($this->valor)."', NOW()) ";
+                        '".addslashes($produto['produto']['nome'])."',
+                         '".addslashes($produto['produto']['valor'])."', NOW()) ";
                 $this->consulta->query($qr);
     }
 

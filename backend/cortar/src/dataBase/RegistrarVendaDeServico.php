@@ -7,15 +7,12 @@ use src\Venda;
 class RegistrarVendaDeServico implements Venda
 {
     private array $servicos;
-    private int $minutos;
     private float $valor;
     private \mysqli $consulta;
 
-    public function __construct(array $servicos, int $minutos, float $valor, \mysqli $consulta)
+    public function __construct(array $servicos, \mysqli $consulta)
     {
         $this->servicos = $servicos;
-        $this->minutos = $minutos;
-        $this->valor = $valor;
         $this->consulta = $consulta;
     }
 
@@ -29,9 +26,9 @@ class RegistrarVendaDeServico implements Venda
     {
         $qr = "INSERT INTO `log_venda_servico` (`servico`, `valor`, `minutos`, `data`)
 VALUES (
-        '".addslashes($servico['nome'])."',
-        {$this->valor},
-         {$this->minutos}, NOW())";
+        '".addslashes($servico['servico']['nome'])."',
+        {$servico['servico']['valor']},
+         1, NOW())";
 
         $this->consulta->query($qr);
     }

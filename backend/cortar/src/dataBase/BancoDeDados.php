@@ -19,7 +19,7 @@ class BancoDeDados
         $resultado = [];
         foreach ($idProdutos as $key=>$produto)
         {
-            $resultado[$key]['nome'] = $this->produtosPorId($produto['idProduto']);
+            $resultado[$key]['produto'] = $this->produtosPorId($produto['idProduto']);
         }
         return $resultado;
     }
@@ -29,19 +29,23 @@ class BancoDeDados
         $trigger = $this->consulta->query($qr);
         if($trigger->num_rows > 0)
         {
+            $resultado = [];
             while($row = $trigger->fetch_array())
             {
-                return $row['nomeProduto'];
+                $resultado['nome'] = $row['nomeProduto'];
+                $resultado['valor'] = $row['valor'];
             }
+            return $resultado;
         }
         return null;
     }
     public function pegarServicosPorId(?array $idServicos)
     {
+        if($idServicos == null) return null;
         $resultado = [];
         foreach ($idServicos as $key=>$servico)
         {
-            $resultado[$key]['nome'] = $this->servicosPorId($servico['idServico']);
+            $resultado[$key]['servico'] = $this->servicosPorId($servico['idServico']);
         }
         return $resultado;
     }
@@ -51,10 +55,13 @@ class BancoDeDados
         $trigger = $this->consulta->query($qr);
         if($trigger->num_rows > 0)
         {
+            $resultado = [];
             while($row = $trigger->fetch_array())
             {
-                return $row['nome'];
+                $resultado['nome'] = $row['nome'];
+                $resultado['valor'] = $row['valor'];
             }
+            return $resultado;
         }
         return null;
     }

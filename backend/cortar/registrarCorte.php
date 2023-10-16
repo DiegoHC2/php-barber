@@ -9,19 +9,7 @@ $filtro = new \src\Filtro($_POST);
 $banco = new \src\dataBase\BancoDeDados($consulta);
 $arrayProdutos = $banco->pegarProdutosPorId($filtro->tratarProdutos());
 $arrayServicos = $banco->pegarServicosPorId($filtro->tratarServicos());
-var_dump($arrayServicos);
-/*$minutos = 123;
-$servicos = [
-    "corte",
-];
-$minutos = null;
-$servicos = null;
-$produtos = [
-    "Tinta",
-    "Gel"
-];*/
-$valor = 45.20;
-$controlador = new ControladorDeVenda(1, null, $arrayServicos, $valor, $consulta);
+$controlador = new ControladorDeVenda($arrayProdutos, $arrayServicos, $consulta);
 
 $controlador->registrarServico();
 $consulta->close();
