@@ -2,7 +2,7 @@
 
 namespace src;
 
-interface TotalVenda
+interface TotalCusto
 {
     public function pegarValorTotal(string $startDate, string $endDate);
 }

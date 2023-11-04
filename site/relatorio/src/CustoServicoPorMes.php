@@ -2,7 +2,7 @@
 
 namespace src;
 
-class VendaServicoPorMes implements TotalVenda
+class CustoServicoPorMes implements TotalCusto
 {
  private \mysqli $consulta;
     public function __construct(\mysqli $consulta)
@@ -11,7 +11,7 @@ class VendaServicoPorMes implements TotalVenda
     }
     public function pegarValorTotal( string $startDate, string $endDate) : ?array
     {
-       $qr = "SELECT SUM(valor) as total FROM `log_venda_servico` WHERE data >= '{$startDate}' and data <= '{$endDate}'";
+       $qr = "SELECT SUM(valor) as total FROM `servicos` WHERE dataCompra >= '{$startDate}' and dataCompra <= '{$endDate}'";
        $trigger = $this->consulta->query($qr);
        if($trigger->num_rows > 0)
        {

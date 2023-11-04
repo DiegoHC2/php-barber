@@ -21,7 +21,7 @@
 <div class="text-center" style="display:flex;justify-content: center;">
     <div class="bg-light" style="margin-top:20%;width:400px;padding:50px;">
         <label for="birthday" style="font-size:25px;font-weight: bold;">Selecione o mês para emitir relatório:</label>
-        <form>
+        <form method="POST" action="home.php">
             <input type="date" id="birthday" name="data" style="margin-top:5px;border:none;background-color: darkslategrey;font-weight: bold;padding:10px;border-radius: 10px;color:white;">
             <br>
             <button class="btn btn-success mt-4" style="font-weight: 500; font-size:19px; width: 150px; text-transform: uppercase;font-family: revert;letter-spacing: 2px;">Emitir</button>

@@ -10,16 +10,6 @@ Forám utilizados no projeto
 * Bootstrap 4.0.0
 * jquery 3.5.1
 * Font-awesome 6
+* Google Chart
 
-# V2.0.1
-
-## Version v1.0.3
-
-#### Adicionado na aba corte, produtos cadastrados no BD
-## Version v2.0.0
-
-#### Adicionar servicos
-#### Inserido validações backend e nova página
-
-## Version v2.0.1 
-#### Adicionado na aba corte servicos registrado no banco de dados
+# V3.0.1

@@ -26,7 +26,6 @@
 </div>
 <nav class="navbar navbar-expand-lg  justify-content-center">
     <div class="image-container">
-        <img src="public/images/background.jpg" alt="Imagem">
         <div id="menu" class="d-flex flex-column justify-content-center align-content-center">
             <div class="option" >
                 <a href="site/cortar/main.php" style="text-decoration: none;" class="d-flex row" >
@@ -48,6 +47,11 @@
                     <span>Adicionar Serviço</span>
                 </a>
             </div>
+            <div class="option text-center"  >
+                <a  href="/site/relatorio/controlador.php" style="text-decoration: none" class="d-flex row">
+                    <span>Relatórios</span>
+                </a>
+            </div>
         </div>
     </div>
 </nav>
@@ -60,30 +64,12 @@
         display:flex;
         justify-content: center;
     }
-    .image-container {
-        width: 100%;
-        height: 574px; /* Defina a altura desejada */
-        overflow: hidden;
-        position:relative;
-    }
-
-    .image-container img {
-        width: 100%; /* Garanta que a imagem ocupe a largura total do container */
-        height: auto; /* Mantenha a proporção da imagem */
-        position:absolute;
-        top: -444px;
-        transform: scale(0.9);
-        transform-origin: center center;
-        opacity:0.3;
-    }
     .image-container #menu {
-        position: absolute;
-        top:40%;
-        right: 17%;
         padding: 20px;
+        margin-top:20%;
         width: 480px;
         border-radius: 15px;
-        background-color: rgb(0 0 0 / 18%);
+        background-color: rgba(84, 83, 83, 0.18);
     }
 
     #menu .option{

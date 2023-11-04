@@ -16,6 +16,7 @@ class BancoDeDados
 
     public function pegarProdutosPorId(?array $idProdutos)
     {
+        if($idProdutos == null) return null;
         $resultado = [];
         foreach ($idProdutos as $key=>$produto)
         {

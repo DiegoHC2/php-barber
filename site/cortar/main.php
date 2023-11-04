@@ -8,6 +8,17 @@ $consulta = (new Connection())->dbConnect();
 $arrayProdutos = (new Produtos($consulta))->pegarProdutosDoBancoDeDados();
 $arrayServicos = (new Servicos($consulta))->pegarServicosBancoDeDados();
 $consulta->close();
+$msg = null;
+if(isset($_GET['msg']))
+{
+    if($_GET['msg'] == 'success') $msg = "Cadastro realizado com Sucesso !!";
+}
+$error = null;
+if(isset($_GET['error']))
+{
+    if($_GET['error'] == 'empty') $error = 'Nenhum campo selecionado !!';
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,6 +36,16 @@ $consulta->close();
     <title>Cortar</title>
 </head>
 <body class="text-center" >
+<?php if($msg != null) { ?>
+<div class="alert-success" style="position: absolute; font-size:25px;top:10%;">
+<?php echo $msg; ?>
+</div>
+<?php }  ?>
+<?php if($error != null) { ?>
+    <div class="alert-danger" style="position: absolute; font-size:25px;top:10%;">
+        <?php echo $error; ?>
+    </div>
+<?php }  ?>
 <div class=" d-flex flex-row" style="padding: 70px;height: 800px;">
     <div class="mr-2" style="padding: 0px 15px;width:40%;margin-top:20%;">
         <div>
@@ -42,9 +63,9 @@ $consulta->close();
                             $controlador = $key;
                             ?>
 
-                            <div class="form-check">
+                            <div class="form-check" style="font-size:20px;background-color:rgba(114,114,114,0.3); color:white;margin-top:10px;margin-bottom: 0px;border-radius: 5px;margin-right: 15px;">
                                 <input class="form-check-input" type="checkbox" name="<?php echo "servico{$key}";?>" value="<?php echo $servico['id'];?>" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault" style="width: 70%;">
                                     <?php echo $servico['nome'];?>
                                 </label>
                             </div>
@@ -52,7 +73,8 @@ $consulta->close();
                         <input type="hidden" name="quantidade_servico" value="<?php echo $controlador;?>">
                             <?php
                     } else { ?>
-                        <span>Sem Servicos cadastrados !</span>
+                            <br>
+                        <span style="font-size:20px;">Sem Servicos cadastrados !</span>
                     <?php } ?>
             </div>
             <div class="d-flex flex-column" style="width: 50%;">
@@ -63,16 +85,16 @@ $consulta->close();
                     foreach($arrayProdutos as $key=>$produto) {
                         $controlador = $key;
                         ?>
-                        <div class="form-check">
+                        <div class="form-check" style="font-size:20px;background-color:rgba(114,114,114,0.3); color:white;margin-top:10px;margin-bottom: 0px;border-radius: 5px;">
                             <input class="form-check-input" type="checkbox" name="<?php echo "produto{$key}";?>" value="<?php echo $produto['id'];?>" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault" style="width: 80%;">
                                 <?php echo $produto['nome'];?>
                             </label>
                         </div>
                     <?php } ?>
                     <input type="hidden" name="quantidade_produtos" value="<?php echo $controlador;?>">
                         <?php } else {?>
-                    <span>Sem Produtos cadastrados !</span>
+                    <span style="font-size:20px;">Sem Produtos cadastrados !</span>
                 <?php }?>
                 </form>
             </div>
